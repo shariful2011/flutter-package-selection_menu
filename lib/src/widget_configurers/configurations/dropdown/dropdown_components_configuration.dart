@@ -161,12 +161,14 @@ class DropdownAnimationComponent extends AnimationComponent
     return Material(
       color: Colors.transparent,
       child: Card(
-        margin: EdgeInsets.only(top: 2),
-        shape: ContinuousRectangleBorder(),
+        margin: EdgeInsets.only(top: 5),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(8),
+        ),
         child: AnimatedContainer(
           duration: const Duration(milliseconds: 500),
           curve: Curves.easeOut,
-          padding: EdgeInsets.all(8.0),
+          padding: EdgeInsets.all(0),
           child: SizeTransition(
             axisAlignment: -1.0,
             sizeFactor: _animation,
@@ -199,7 +201,7 @@ class DropdownSearchFieldComponent extends SearchFieldComponent {
   Widget _builder(SearchFieldComponentData data) {
     Color accentColor = Theme.of(data.context).accentColor;
     return Container(
-      margin: const EdgeInsets.only(bottom: 5.0),
+      margin: const EdgeInsets.only(bottom: 0),
       decoration: BoxDecoration(
         border: Border(
           bottom: BorderSide(
@@ -218,7 +220,7 @@ class DropdownSearchFieldComponent extends SearchFieldComponent {
           decoration: InputDecoration(
             border: InputBorder.none,
             hintText: "Search...",
-            contentPadding: const EdgeInsets.all(10.0),
+            contentPadding: const EdgeInsets.all(0),
           ),
         ),
       ),
@@ -285,7 +287,7 @@ class DropdownListViewComponent extends ListViewComponent {
 
   Widget _builder(ListViewComponentData data) {
     return ListView.builder(
-      padding: EdgeInsets.only(top: 8.0),
+      padding: EdgeInsets.only(top: 0),
       itemBuilder: data.itemBuilder,
       itemCount: data.itemCount,
     );
