@@ -30,6 +30,7 @@ class MyStatefulWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     //Size screenSize = MediaQuery.of(context).size;
     return Scaffold(
+      backgroundColor: Colors.black,
       body: Row(
         children: [
           _buildMenu(
