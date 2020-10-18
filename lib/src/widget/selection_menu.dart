@@ -345,9 +345,11 @@ class SelectionMenuState<T> extends State<SelectionMenu<T>>
     if (_menuOverlay == null) {
       initMenuOverlay();
     } else {
-      WidgetsBinding.instance.addPostFrameCallback((_) {
-        _menuOverlay.markNeedsBuild();
-      });
+      if (mounted) {
+        WidgetsBinding.instance.addPostFrameCallback((_) {
+          _menuOverlay.markNeedsBuild();
+        });
+      }
     }
 
     return CompositedTransformTarget(
